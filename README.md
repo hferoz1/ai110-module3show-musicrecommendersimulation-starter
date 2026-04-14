@@ -28,6 +28,16 @@ Some prompts to answer:
 - How do you choose which songs to recommend
 
 You can include a simple diagram or bullet list if helpful.
+ANSWER: In my version of the music recommender, each `Song` is represented by its genre, mood, and energy level. The `UserProfile` stores the user's preferred genre, mood, and energy level. The `Recommender` computes a score for each song by comparing the song's features to the user's preferences. For example, it might give points for matching genre, mood, and energy level, and then recommend the songs with the highest scores.
+
+Algorithm Recipe:
+1. For each song in the catalog:
+   a. Initialize a score to 0.
+   b. If the song's genre matches the user's preferred genre, add 2 points to the score.
+   c. If the song's mood matches the user's preferred mood, add 1 point to the score.
+   d. If the song's energy level is within 0.1 of the user's preferred energy level, add 1 point to the score.
+2. Sort the songs by their scores in descending order.
+3. Recommend the top 3 songs with the highest scores.   
 
 ---
 
